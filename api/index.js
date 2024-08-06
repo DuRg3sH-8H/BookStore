@@ -6,7 +6,14 @@ import cors from "cors";
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+  {
+    origin: "https://banking-app-dun.vercel.app/",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type"],
+    credentials: true,
+  }
+));
 
 app.get("/", (req, res) => {
   console.log(req);
