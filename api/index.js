@@ -6,13 +6,7 @@ import cors from "cors";
 
 const app = express();
 app.use(express.json());
-app.use(cors(
-  {
-    origin: "https://book-store-fyt6.vercel.app/",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  }
-));
+app.use(cors());
 
 app.get("/", (req, res) => {
   console.log(req);
